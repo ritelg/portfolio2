@@ -1,0 +1,19 @@
+body {
+  scroll-behavior: smooth;
+}
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+section { margin: 2.5rem 0; }
+@media screen and (min-width: $width-labtop) {
+  .container {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+}@media screen and (min-width: $width-labtop-l) {
+  .container {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+}

@@ -1,0 +1,204 @@
+section { margin: 2.5rem 0; }
+.a-la-une h2, .avis h2, .contact h2 { 
+    text-transform: uppercase; 
+    text-align: center; 
+    margin-bottom: 2rem;
+}
+// COMPÉTENCES
+// ===================================================
+
+.skills {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.skills a {
+    position: relative;
+    margin: 2rem 0;
+    display: block;
+    width: 100%;
+} 
+.skills figure {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.skills picture {
+    grid-column: span 3;
+    width: 100%;
+    height: 100%;
+    box-shadow: $box-shadow;
+}
+.skills img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+.skills figcaption {
+    grid-column: 2 / 5;
+    background-color: #fff;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    padding: 0.7rem;
+    transform: translate(0, -50%)
+}
+.skills figcaption h2 {
+    margin-bottom: .5rem;
+}
+
+.skills a:nth-of-type(2n) picture {
+    grid-column: 2 / 5;
+}
+.skills a:nth-of-type(2n) figcaption{
+    grid-column: span 3;
+}
+.skills h2:after { display: none; }
+
+@media screen and (min-width: $width-labtop) {
+
+    $padding: 2.5rem;
+
+    .skills.container { padding: 0; margin: 0; }
+    .skills figure {
+        grid-template-columns: repeat(14, 1fr);
+        gap: 1rem;
+        grid-template-rows: auto;
+        margin: 10rem 0;
+    }
+    .skills picture { grid-column: span 8; position: relative; grid-row: span 2 ;}
+    .skills figcaption { 
+        grid-column: 10 / 14;
+        transform: translate(0,0);
+        box-shadow: none;
+        padding: $padding;
+        margin-top: -$padding;
+        background-color: #fff;
+    }
+    .skills a:nth-of-type(2n) picture { grid-column: 7 / 15; }
+    .skills a:nth-of-type(2n) figcaption{ grid-column: span 4 ; grid-row: 1/2; }
+    .skills picture:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -$padding;
+        left: 0;
+        right: -$padding;
+        background-color: #fff;
+        z-index: -1;
+        bottom: 0;
+    }    
+    .skills picture:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        top: -30%;
+        right: -40%;
+        z-index: -2;
+        border: 2px solid $color;
+        border-radius: 5px;
+    }
+    .skills a:nth-of-type(2n) picture:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -$padding;right:0;
+    }
+    .skills a:nth-of-type(2n) picture:after {
+        content: '';
+        display: block;
+        position: absolute;
+        right: 50%;
+        left: -40%;
+    }
+    .skills figcaption h2 { margin-bottom: 2.5rem; } 
+}
+
+// PROJETS À LA UNE
+// ===================================================
+.a-la-une a {
+    position: relative;
+}
+.a-la-une figure, .a-la-une picture, .a-la-une img, .a-la-une {
+    height: 100%;
+    width: 100%;
+}
+.a-la-une figcaption {
+    position: absolute;
+    top: 0;left: 0;right: 0;bottom: 0;
+    background: $radial-gradient-2 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.a-la-une figcaption p {
+    font-weight: 100;
+}
+
+@media screen and (min-width: $width-labtop) {
+    .a-la-une figcaption { opacity: 0; transition: opacity .3s;}
+    .a-la-une figure:hover figcaption { opacity: 1; }
+}
+
+// AVIS
+// ===================================================
+.avis-content {
+    display: flex;
+    align-items: center;
+}
+.avis-item {
+    display: flex;
+    flex-basis: 100%;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    padding: 0.7rem;
+}
+.avis-item picture {
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    overflow: hidden;
+    margin-right: 0.5rem;
+}
+.avis-item picture > * {
+    height: 100%;
+    width: 100%;
+}
+.avis-item .content { width: 100%; }
+.avis-item h3, .avis-item p { padding: 0.1rem 0; }
+.avis-item .link-site { font-weight: 100; }
+
+
+
+// CONTACT
+// ===================================================
+
+@media screen and (min-width: $width-labtop) {
+    .contact {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+    .contact form {
+        display: grid;
+        grid-column: 3 / 11;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .contact > h2, .contact > p {
+        grid-column: 4 / 10;
+    }
+    .contact .email, .contact .subject { grid-column: span 1; }
+    .contact .message { grid-column: span 2; }
+}
+
+@media screen and (min-width: $width-labtop-l) {
+    .contact form {
+        grid-column: 4 / 10;
+    }
+    .contact > h2, .contact > p {
+        grid-column: 4 / 10;
+    }
+}

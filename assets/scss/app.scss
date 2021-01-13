@@ -1,0 +1,35 @@
+$color: #151515;
+$color-secondary: #00C9FF;
+
+$width-labtop: 1024px;
+$width-labtop-l: 1440px;
+
+$radial-gradient: radial-gradient(closest-side at 50% 50%, #151515F2 0%, #000000F7 100%);
+$radial-gradient-2: radial-gradient(closest-side at 50% 50%, rgba($color, .8) 0%, rgba($color, .8) 100%);
+$radial-gradient-opaque: radial-gradient(closest-side at 50% 50%, #151515FC 0%, #000000FC 100%);
+$box-shadow: 2px 0 10px rgba(#000, .3);
+
+$wave: url(./images/wave.svg);
+$header-background: url(./images/header-fond.jpg);
+
+$font-primary: 'Open Sans', sans-serif;
+$font-secondary: 'JetBrains Mono', monospace;
+
+@import "tools/mixins";
+@import "reset";
+@import "base";
+
+@import "modules/card";
+@import "modules/flash";
+@import "modules/form";
+@import "modules/typographie";
+@import "modules/contact";
+@import "modules/grid";
+
+@import "pages/accueil";
+@import "pages/projects";
+@import "pages/categories";
+@import "pages/project";
+
+@import "header";
+@import "footer";

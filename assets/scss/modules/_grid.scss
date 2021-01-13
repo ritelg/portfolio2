@@ -1,0 +1,42 @@
+.grid {
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid a {
+    grid-column: span 4;
+}
+.grid a.middle, .grid a.middle { grid-column: span 2; }
+
+.grid figure, .grid figure {
+    position: relative;
+}
+.grid figure > figcaption, .grid figure > figcaption {
+    position: absolute;
+    top: 0;left: 0;right: 0;bottom: 0;
+    text-align: center;
+    background: $radial-gradient;
+    color: #fff;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.grid picture, .grid picture,
+.grid img, .grid img { width: 100%; }
+
+@media screen and (min-width: $width-labtop) {
+    .grid {
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: auto;
+    }
+    .grid a {
+        grid-column: span 6;
+        grid-row: span 2;
+    }
+    .grid a.middle {
+        grid-column: span 3;
+        grid-row: span 1
+    }
+}

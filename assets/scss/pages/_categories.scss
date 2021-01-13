@@ -1,0 +1,8 @@
+.page-category figcaption > p {
+    font-family: $font-secondary;
+    font-weight: 100;
+}
+@media screen and (min-width: $width-labtop) {
+    .projects-a-l-une figcaption { opacity: 0; transition: opacity .3s;}
+    .projects-a-l-une figure:hover figcaption { opacity: 1; }
+}

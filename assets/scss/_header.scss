@@ -1,0 +1,81 @@
+header {
+    background:  $wave bottom no-repeat, $radial-gradient 50%, $header-background center / cover;
+    color: #fff;
+}
+.navigation {
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation .link-mobile, .navigation .logo {
+    height: 48px;width: 48px;
+    display: block;
+    padding: 8px;
+}
+
+
+.navigation ul {
+    position: fixed;
+    top: 0;left: 0;bottom: 0;
+    width: 40%;
+    background: $radial-gradient-opaque;
+    color: #fff;
+    padding-top: 5rem;
+    box-shadow: $box-shadow;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform .3s;
+    z-index: 2;
+}
+.navigation ul.active {
+    transform: translate3d(0,0,0);
+}
+.navigation .overlay {
+    position: fixed;
+    top: 0;left: 0;bottom: 0;right: 0;
+    background-color: rgba($color, .5);
+}
+.navigation ul li, .navigation ul a { width: 100%; }
+.navigation ul a {
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 1rem 0;
+}
+header .about {
+    padding-top: 1.5rem;
+    padding-bottom: 5rem;
+
+}
+.about h1.light {
+    margin-bottom: 0.5rem;
+}
+.about p { margin: 2rem 0;  }
+
+@media screen and (min-width: $width-labtop) {
+    .navigation ul {
+        position: relative;
+        // width: auto;
+        padding-top: 0;
+        flex-direction: row;
+        align-items: center;
+        background: none;
+        transform: none;
+    }
+    .navigation .link-mobile {
+        display: none;
+    }
+    .about h1:first-of-type {
+        margin: 1rem 0;
+    }
+    .about h1:nth-of-type(2) {
+        margin-bottom: 4rem;
+    }
+    .about button { margin-top: 4rem; }
+}
+
