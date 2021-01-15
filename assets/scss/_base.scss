@@ -6,6 +6,13 @@ body {
   padding-right: 1rem;
 }
 section { margin: 2.5rem 0; }
+picture {
+  opacity: 0;
+  transition: opacity .3s;
+}
+picture.active {
+  opacity: 1;
+}
 @media screen and (min-width: $width-labtop) {
   .container {
     padding-left: 7rem;
