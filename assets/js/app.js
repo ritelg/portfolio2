@@ -78,6 +78,7 @@ function ScrollEnter(selector, callback, options) {
 document.addEventListener('DOMContentLoaded', function () {
     menuMobile();
     new ScrollEnter('picture', function (el) {
+        console.log(el)
         el.classList.add('active');
         
         const src = el.dataset.src;

@@ -5,7 +5,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 let config = {
-    mode: 'developement',
+    mode: 'production',
+    entry: {
+        app: ['./assets/scss/app.scss', './assets/js/app.js'],
+    },
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '',
+    },
     module: {
         rules: [
             {
@@ -81,17 +89,5 @@ let config = {
         new MiniCssExtractPlugin(),
     ]
 }
-const config1 = {
-    ...config,
-
-    entry: {
-        app: ['./assets/scss/app.scss', './assets/js/app.js'],
-    },
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist'),
-        publicPath: '/dist/',
-    },
-}
-module.exports = config1
+module.exports = config
 
