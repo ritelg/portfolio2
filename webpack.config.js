@@ -13,7 +13,7 @@ let config = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/assets/'
+        publicPath: '/dist/'
     },
     devServer: {
         contentBase: path.join(__dirname, '.'), // Dossier avec les 
