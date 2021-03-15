@@ -12,7 +12,7 @@ let config = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '',
+        publicPath: '/portfolio2',
     },
     module: {
         rules: [
