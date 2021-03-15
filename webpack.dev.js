@@ -68,8 +68,7 @@ const config1 = {
     ...config,
 
     entry: {
-        app: ['./assets/scss/app.scss', './assets/js/app.js'],
-        admin: ['./assets/scss/admin.scss']
+        app: ['./assets/scss/app.scss', './assets/js/app.js']
     },
     output: {
         filename: '[name].js',
