@@ -108,11 +108,12 @@
     </footer>
     <script src="/portfolio2/dist/app.js"></script>
     <script>
-        (function () {
-            document.addEventListener('DOMContentLoaded', function () {
-            })
-        })();
-    </script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+      
+        gtag('config', 'UA-163949822-1');
+      </script>
 </body>
 
 </html>
