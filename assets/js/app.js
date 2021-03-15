@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const src = el.dataset.src;
         const ext = el.dataset.ext;
+    
         if (!src || !ext) { console.log('src non definie'); return; }
         const img = el.querySelector('img');
         const sources = el.querySelectorAll('source')
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!taille || taille.length === 0 ) {
                     source.setAttribute('srcset', src + '.' + ext);
                 } else {
-                    source.setAttribute('srcset', 'src', src + '-' + taille + '.' + ext)
+                    source.setAttribute('srcset',  src + '-' + taille + '.' + ext)
                 }
                 
                 sources[i]
