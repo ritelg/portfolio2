@@ -39,7 +39,8 @@ section { margin: 2.5rem 0; }
     box-shadow: $box-shadow;
     border-radius: 5px;
     padding: 0.7rem;
-    transform: translate(0, -50%)
+    transform: translate(0, -50%);
+    
 }
 .skills figcaption h2 {
     margin-bottom: .5rem;
@@ -64,7 +65,14 @@ section { margin: 2.5rem 0; }
         grid-template-rows: auto;
         margin: 10rem 0;
     }
-    .skills picture { grid-column: span 8; position: relative; grid-row: span 2 ;}
+    .skills picture { 
+        grid-column: span 8; 
+        position: relative; 
+        grid-row: span 2 ;
+        left: -10rem;
+        transition: left .5s ease-out, right .5s ease-out, opacity .2s ease-out;
+        transition-delay: .4s;
+    }
     .skills figcaption { 
         grid-column: 10 / 14;
         transform: translate(0,0);
@@ -72,9 +80,16 @@ section { margin: 2.5rem 0; }
         padding: $padding;
         margin-top: -$padding;
         background-color: #fff;
+
+        
+        position: relative;
+        left: -10rem;
+        opacity: 0;
+        transition: left .5s ease-out, right .5s, ease-out, opacity .2s ease-out;
+        transition-delay: .4s;
     }
-    .skills a:nth-of-type(2n) picture { grid-column: 7 / 15; }
-    .skills a:nth-of-type(2n) figcaption{ grid-column: span 4 ; grid-row: 1/2; }
+    .skills a:nth-of-type(2n) picture { grid-column: 7 / 15; right: -10rem; left: 10rem; }
+    .skills a:nth-of-type(2n) figcaption{ grid-column: span 4 ; grid-row: 1/2; right: -10rem; left: 10rem; }
     .skills picture:before {
         content: '';
         display: block;
@@ -112,6 +127,16 @@ section { margin: 2.5rem 0; }
         left: -40%;
     }
     .skills figcaption h2 { margin-bottom: 2.5rem; } 
+    
+    .skills figure.active picture {
+        left: 0;
+        right: 0;
+    }
+    .skills figure.active figcaption {
+        left: 0;
+        right: 0;
+        opacity: 1;
+    }
 }
 
 // PROJETS À LA UNE

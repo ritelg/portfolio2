@@ -61,7 +61,7 @@ function ScrollEnter(selector, callback, options) {
     this.init = function () {
         this.options = Object.assign({}, {
             frequence: 64,
-            decalageVertical: 25,
+            decalageVertical: 10,
         }, options);
 
         this.windowHeight = window.innerHeight;
@@ -80,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     new ScrollEnter('picture', function (el) {
         console.log(el)
         el.classList.add('active');
+        el.parentNode.classList.add('active');
         
         const src = el.dataset.src;
         const ext = el.dataset.ext;

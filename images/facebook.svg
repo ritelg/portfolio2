@@ -1,0 +1,5 @@
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="facebook"
+            viewBox="0 0 73 78.7" style="enable-background:new 0 0 73 78.7;" xml:space="preserve">
+        <circle fill="none" stroke="currentColor" stroke-width="5" stroke-miterlimit="10" cx="36.5" cy="36.5" r="34"/>
+        <path fill="currentColor" d="M32.16,55.38V33.64H28.41v-3.3h3.75V27.67a11.53,11.53,0,0,1,.45-3.74,5.43,5.43,0,0,1,2.16-2.68,7.79,7.79,0,0,1,4.32-1,20.15,20.15,0,0,1,4,.43l-.63,3.7a14.06,14.06,0,0,0-2.5-.24,3.74,3.74,0,0,0-2.74.83,4.5,4.5,0,0,0-.8,3.09v2.31h4.88v3.3H36.38V55.38Z"/>
+    </symbol>
