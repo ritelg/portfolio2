@@ -1,0 +1,21 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Background */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Background scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background: rgba($color, .5);
+    border-radius: 5px;
+  }
+  
+  /* Background scrollbar on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $color-secondary;
+  }
+  
