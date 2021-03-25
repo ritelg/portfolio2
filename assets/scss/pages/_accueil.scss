@@ -1,4 +1,3 @@
-section { margin: 2.5rem 0; }
 .a-la-une h2, .avis h2, .contact h2 { 
     text-transform: uppercase; 
     text-align: center; 
@@ -45,7 +44,15 @@ section { margin: 2.5rem 0; }
 .skills figcaption h2 {
     margin-bottom: .5rem;
 }
-
+.skills a:first-of-type {
+    margin-top: 0;
+}
+.skills a:last-of-type {
+    margin-bottom: 0;
+}
+.skills a:last-of-type figure {
+    margin-bottom: 0;
+}
 .skills a:nth-of-type(2n) picture {
     grid-column: 2 / 5;
 }
@@ -58,7 +65,10 @@ section { margin: 2.5rem 0; }
 
     $padding: 2.5rem;
 
-    .skills.container { padding: 0; margin: 0; }
+    .skills.container { padding: 0; }
+    .skills a:first-child figure {
+        margin-top: 8rem;
+    }
     .skills figure {
         grid-template-columns: repeat(14, 1fr);
         gap: 1rem;
@@ -69,6 +79,7 @@ section { margin: 2.5rem 0; }
         grid-column: span 8; 
         position: relative; 
         grid-row: span 2 ;
+        box-shadow: none;
         left: -10rem;
         transition: left .4s ease-out, right .5s ease-out, opacity .1s ease-out;
         transition-delay: .1s;
@@ -139,7 +150,7 @@ section { margin: 2.5rem 0; }
     
 
     // Cadre competences
-    
+
     $width-border: 2px;
     $animationDuration: .5s;
     .skills picture .box,
@@ -300,31 +311,47 @@ section { margin: 2.5rem 0; }
 
 // CONTACT
 // ===================================================
-
+.contact form {
+    margin-top: 2rem;
+}
 @media screen and (min-width: $width-labtop) {
-    .contact {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1rem;
-    }
+
     .contact form {
         display: grid;
         grid-column: 3 / 11;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
-    .contact > h2, .contact > p {
-        grid-column: 4 / 10;
+    .contact .form-group {
+        margin: 0;
+    }
+    .contact .btn {
+        margin-right: auto;
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
     }
     .contact .email, .contact .subject { grid-column: span 1; }
     .contact .message { grid-column: span 2; }
 }
 
 @media screen and (min-width: $width-labtop-l) {
-    .contact form {
-        grid-column: 4 / 10;
+    
+    .contact {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        text-align: left;
     }
-    .contact > h2, .contact > p {
-        grid-column: 4 / 10;
+    .contact > * {
+        flex-basis: 48%;
+    }
+    .contact form {
+        margin-top: 0;
+    }
+    .contact h2 {
+        text-align: left;
+    }
+    .contact h2:after {
+        margin-left: 0;
     }
 }

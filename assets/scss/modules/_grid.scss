@@ -28,6 +28,15 @@
 .grid figcaption p {
     margin-bottom: 1em;
 }
+.grid a figure.middle {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+.grid a figure.figure16_18 {
+    aspect-ratio: 16 /18;
+    overflow: hidden;
+}
+
 
 @media screen and (min-width: $width-labtop) {
     .grid {

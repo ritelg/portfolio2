@@ -1,16 +1,52 @@
+button {
+    background: none;
+    appearance: none;
+}
 .btn {
     border-radius: 5px;
     appearance: none;
     box-shadow: none;
-    border: 1px solid #fff;
     background: none;
-    padding: 5px 10px;
-    color: #fff;
-    font-size: 0.8rem;
+    padding: .375rem .75rem;
+    color: $color;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $color;
+    z-index: 2;
+}
+
+.btn:before {
+    content: '';
+    display: block;
+    border: none;
+    position: absolute;
+    left: -2px; top: 0;bottom: 0;
+    right: 100%;
+    z-index: -1;
+    // transform: skew(-5deg);
+    border-radius: 5px;
+    transition: right .3s ease-out;
 }
 .btn:hover {
+    color: #fff;
+}
+.btn:hover::before {
+    background-color: $color;
+    color: #fff;
+    right: -1px;
+}
+header .btn {
+    border: 1px solid #fff;
+    color: #fff;
+}
+header .btn:hover {
+    color: $color;
+}
+header .btn:hover::before {
     background-color: #fff;
     color: $color;
+    right: -1px;
 }
 .form-group {
     margin: 1rem 0;
@@ -26,6 +62,10 @@ input, textarea {
     padding: 1rem;
     width: 100%;
     border: 1px solid $color;
+    min-width: 100%;
+}
+textarea {
+    min-height: 10rem;
 }
 ::placeholder, ::-moz-placeholder, ::-webkit-input-placeholder, ::-ms-input-placeholder {
     color: $color;

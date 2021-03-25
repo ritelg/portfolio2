@@ -5,7 +5,7 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-section { margin: 2.5rem 0; }
+section, main { margin: 2.5rem 0; }
 picture {
   opacity: 0;
   transition: opacity .3s;
@@ -17,5 +17,9 @@ picture.active {
   .container {
     padding-left: 7rem;
     padding-right: 7rem;
+  }
+  section, main {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
   }
 }
