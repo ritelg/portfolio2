@@ -70,8 +70,8 @@ section { margin: 2.5rem 0; }
         position: relative; 
         grid-row: span 2 ;
         left: -10rem;
-        transition: left .5s ease-out, right .5s ease-out, opacity .2s ease-out;
-        transition-delay: .4s;
+        transition: left .4s ease-out, right .5s ease-out, opacity .1s ease-out;
+        transition-delay: .1s;
     }
     .skills figcaption { 
         grid-column: 10 / 14;
@@ -85,8 +85,8 @@ section { margin: 2.5rem 0; }
         position: relative;
         left: -10rem;
         opacity: 0;
-        transition: left .5s ease-out, right .5s, ease-out, opacity .2s ease-out;
-        transition-delay: .4s;
+        transition: left .4s ease-out, right .5s, ease-out, opacity .1s ease-out;
+        transition-delay: .1s;
     }
     .skills a:nth-of-type(2n) picture { grid-column: 7 / 15; right: -10rem; left: 10rem; }
     .skills a:nth-of-type(2n) figcaption{ grid-column: span 4 ; grid-row: 1/2; right: -10rem; left: 10rem; }

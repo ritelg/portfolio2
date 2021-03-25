@@ -1,4 +1,5 @@
 import {menuMobile} from './header'
+import {createVideo} from './videos'
 const turbolinks = require('turbolinks')
 
 /**
@@ -61,7 +62,7 @@ function ScrollEnter(selector, callback, options) {
     this.init = function () {
         this.options = Object.assign({}, {
             frequence: 64,
-            decalageVertical: 10,
+            decalageVertical: 5,
         }, options);
 
         this.windowHeight = window.innerHeight;
@@ -77,6 +78,13 @@ function ScrollEnter(selector, callback, options) {
 
 document.addEventListener('DOMContentLoaded', function () {
     menuMobile();
+
+    // Image de fond header
+    const header = document.querySelector('body > header')
+    if (header.dataset.background !== undefined) {
+        header.style.background = "url('../images/wave.svg') bottom no-repeat, radial-gradient(closest-side at 50% 50%, #151515F2 0%, #000000F7 100%) 50%, url('" + header.dataset.background + "') center / cover"
+    }
+
     new ScrollEnter('picture', function (el) {
         console.log(el)
         el.classList.add('active');
@@ -108,4 +116,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Element entré : ', el, src, ext, img)
     })
+
+    const videos = document.querySelectorAll('img.video')
+    if (videos.length > 0) {
+        new ScrollEnter('img.video', function (el) {
+            console.log(el)
+            el.classList.add('active')
+            el.parentNode.classList.add('active')
+            const src = el.dataset.src
+            el.parentNode.appendChild(createVideo(src, el.classList))
+            el.parentNode.removeChild(el)
+
+
+        })
+    }
 })

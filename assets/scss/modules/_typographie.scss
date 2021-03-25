@@ -20,6 +20,12 @@ h2:after {
     position: absolute;
     left: 0;right: 0;
 }
+main h2 {
+    margin: 1em 0;
+}
+main p {
+    margin: 1em 0;
+}
 @media screen and (min-width: $width-labtop) {
     body { font-size: 16px; }
     h2:after {
