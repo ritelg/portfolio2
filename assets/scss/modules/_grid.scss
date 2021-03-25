@@ -25,6 +25,9 @@
 }
 .grid picture, .grid picture,
 .grid img, .grid img { width: 100%; }
+.grid figcaption p {
+    margin-bottom: 1em;
+}
 
 @media screen and (min-width: $width-labtop) {
     .grid {

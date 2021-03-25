@@ -103,7 +103,7 @@ section { margin: 2.5rem 0; }
     }    
     .skills picture:after {
         content: '';
-        display: block;
+        display: none; // TODO: Remettre
         position: absolute;
         left: 50%;
         bottom: 50%;
@@ -112,6 +112,7 @@ section { margin: 2.5rem 0; }
         z-index: -2;
         border: 2px solid $color;
         border-radius: 5px;
+        transition: border .3s .5s ease-out, border-image .3s .5s ease-out;
     }
     .skills a:nth-of-type(2n) picture:before {
         content: '';
@@ -120,9 +121,6 @@ section { margin: 2.5rem 0; }
         left: -$padding;right:0;
     }
     .skills a:nth-of-type(2n) picture:after {
-        content: '';
-        display: block;
-        position: absolute;
         right: 50%;
         left: -40%;
     }
@@ -137,7 +135,110 @@ section { margin: 2.5rem 0; }
         right: 0;
         opacity: 1;
     }
+
+    
+
+    // Cadre competences
+    
+    $width-border: 2px;
+    $animationDuration: .5s;
+    .skills picture .box,
+    .skills picture .top, 
+    .skills picture .bottom, 
+    .skills picture .left, 
+    .skills picture .right {
+        display: block;
+        position: absolute;
+    }
+    .skills picture .box {
+        left: 50%;
+        bottom: 50%;
+        top: -30%;
+        right: -40%;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .skills a:nth-of-type(2n) .box {
+        right: 50%;
+        left: -40%;
+    }
+    .skills picture .top, 
+    .skills picture .bottom, 
+    .skills picture .left, 
+    .skills picture .right {
+        display: block;
+        position: absolute;
+        animation: $animationDuration linear both;
+        background-color: $color;
+    }
+
+    .skills figure.active .top {
+        top: 0;
+        left: -3px;
+        height: $width-border;
+        animation-name: top;
+    }
+    @-webkit-keyframes top {
+        25% {
+            width: 0;
+        }
+        100% {
+            width: 103%;
+        }
+    }
+
+    .skills figure.active .bottom {
+        bottom: 0;
+        right: -3px;
+        height: $width-border;
+        animation-name: bottom;
+        animation-delay: $animationDuration * 2;
+    }
+    @-webkit-keyframes bottom {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 103%;
+        }
+    }
+
+    .skills figure.active .left {
+        bottom: -3px;
+        left: 0;
+        width: $width-border;
+        animation-name: left;
+        animation-duration: $animationDuration * 3;
+    }
+    @-webkit-keyframes left {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 103%;
+        }
+    }
+
+    .skills figure.active .right {
+        top: -3px;
+        right: 0;
+        width: $width-border;
+        animation-name: right;
+        animation-delay: $animationDuration;
+    }
+    @-webkit-keyframes right {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 103%;
+        }
+    }
 }
+
 
 // PROJETS À LA UNE
 // ===================================================

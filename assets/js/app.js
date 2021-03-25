@@ -78,7 +78,31 @@ function ScrollEnter(selector, callback, options) {
 
 document.addEventListener('DOMContentLoaded', function () {
     menuMobile();
+    
+    const skillsPictures = document.querySelectorAll('.skills picture')
+    if (skillsPictures) {
+        let picture = null
+        for (let i = 0, skillsPicturesLength = skillsPictures.length; i < skillsPicturesLength; i++) {
+            picture = skillsPictures[i]
+            const box = document.createElement('span')
+            const top = document.createElement('span')
+            const right = document.createElement('span')
+            const bottom = document.createElement('span')
+            const left = document.createElement('span')
+            box.classList.add('box')
+            top.classList.add('top')
+            bottom.classList.add('bottom')
+            right.classList.add('right')
+            left.classList.add('left')
 
+            box.appendChild(top)
+            box.appendChild(bottom)
+            box.appendChild(left)
+            box.appendChild(right)
+
+            picture.appendChild(box)
+        }
+    }
     // Image de fond header
     const header = document.querySelector('body > header')
     if (header.dataset.background !== undefined) {
