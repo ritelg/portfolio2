@@ -13,6 +13,10 @@ picture {
 picture.active {
   opacity: 1;
 }
+video {
+  border-radius: 5px;
+  overflow: hidden;
+}
 @media screen and (min-width: $width-labtop) {
   .container {
     padding-left: 7rem;
